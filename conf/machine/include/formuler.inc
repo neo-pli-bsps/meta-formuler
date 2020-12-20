@@ -54,7 +54,17 @@ IMAGE_CMD_ubifs_prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec ci"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec ci HDMI"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/formuler-wifi.inc
+
+MTD_KERNEL = "mtd1"
+MTD_ROOTFS = "mtd2"
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"
+
+RCTYPE = "18"
+RCNAME = "formuler1"
+
+BOX_BRAND = "formuler"
